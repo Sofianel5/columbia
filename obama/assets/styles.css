@@ -1,0 +1,272 @@
+body {
+  font-family: 'Montserrat', sans-serif;
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+  background-color: white;
+  color: black;
+}
+
+@media (max-width: 769px) {
+  body .desktop-holder {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+@media (min-width: 769px) {
+  body .desktop-holder {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+}
+
+body * {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body a {
+  color: inherit;
+}
+
+body a:hover {
+  color: inherit;
+}
+
+@media (min-width: 769px) {
+  body {
+    overflow: hidden;
+  }
+}
+
+body .flex-row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+body .flex-column {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+body .justify-start {
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+}
+
+body .justify-center {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+body .space-between {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+body .end-flex {
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+}
+
+@media (max-width: 769px) {
+  body .background {
+    width: 100vw;
+    height: 51vh;
+    position: fixed;
+    background-image: url("images/obama-background.jpg");
+    background-size: auto 100%;
+    background-position: 0px 50px;
+  }
+}
+
+@media (min-width: 769px) {
+  body .background {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: end;
+    z-index: 0;
+    -webkit-box-flex: 0;
+        -ms-flex: 0 3 43vw;
+            flex: 0 3 43vw;
+    color: black;
+    background-image: url("images/obama-background.jpg");
+    background-position: -100px 0px;
+    background-attachment: scroll;
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+  }
+}
+
+body .background .menu-navigation {
+  position: fixed;
+  z-index: 1;
+  top: 0;
+}
+
+@media (max-width: 769px) {
+  body .background .menu-navigation {
+    width: 100vw;
+    height: 10vh;
+    background-color: white;
+  }
+}
+
+@media (min-width: 769px) {
+  body .background .menu-navigation {
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: start;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin: 3vh 3vw;
+    width: 15vw;
+    right: 0;
+    -webkit-transform-origin: top right;
+    transform-origin: top right;
+  }
+}
+
+body .background .menu-navigation div {
+  width: 100%;
+}
+
+@media (min-width: 769px) {
+  body .background .menu-navigation div {
+    border-bottom: 2px solid black;
+  }
+}
+
+@media (max-width: 769px) {
+  body .background .menu-navigation div {
+    padding: 2vh 5vw;
+  }
+}
+
+body .background .menu-navigation div a {
+  text-decoration: none;
+  font-weight: 600;
+}
+
+@media (max-width: 769px) {
+  body .background .menu-navigation div a {
+    line-height: 2.0em;
+  }
+}
+
+@media (min-width: 769px) {
+  body .background .menu-navigation div a img {
+    width: 25px;
+  }
+}
+
+@media (max-width: 769px) {
+  body .background .menu-navigation div a img {
+    width: 25px;
+  }
+}
+
+@media (min-width: 769px) {
+  body .background .menu-navigation div a .mobile-crown {
+    display: none;
+  }
+}
+
+body .background .menu-navigation p {
+  width: 100%;
+  font-weight: 600;
+}
+
+@media (max-width: 769px) {
+  body .background .menu-navigation p {
+    display: none;
+  }
+}
+
+body .left-title {
+  height: 100vh;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 14vw;
+          flex: 1 0 14vw;
+}
+
+@media (max-width: 769px) {
+  body .left-title {
+    display: none;
+  }
+}
+
+body .left-title img {
+  width: 50%;
+  margin: 0 auto;
+  margin-top: 10vh;
+}
+
+body .left-title h2 {
+  position: absolute;
+  bottom: 0;
+  left: 3.5vw;
+  margin: 0 auto;
+  -webkit-transform: rotate(270deg);
+  transform: rotate(270deg);
+  -webkit-transform-origin: 0 0;
+  transform-origin: 0 0;
+}
+
+body .content-holder {
+  background-color: #CA3433;
+  color: white;
+  -webkit-box-flex: 3;
+      -ms-flex: 3 0 43vw;
+          flex: 3 0 43vw;
+  padding: 5vh 3vw;
+}
+
+@media (max-width: 769px) {
+  body .content-holder {
+    z-index: 3;
+    margin-top: 50vh;
+  }
+}
+
+body .content-holder p {
+  line-height: 1.5;
+}
+/*# sourceMappingURL=styles.css.map */

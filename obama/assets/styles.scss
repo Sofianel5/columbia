@@ -1,0 +1,197 @@
+$desktop: 769px;
+$colors: ( background: white, primary: black, secondary: #CA3433);
+@mixin desktop {
+    @media (min-width: #{$desktop}) {
+        @content;
+    }
+}
+
+@mixin mobile {
+    @media (max-width: #{$desktop}) {
+        @content;
+    }
+}
+
+@mixin transform($transforms) {
+    -webkit-transform: $transforms;
+    -moz-transform: $transforms;
+    -ms-transform: $transforms;
+    transform: $transforms;
+}
+
+@mixin transform-origin ($origin) {
+    -webkit-transform-origin: $origin;
+    -moz-transform-origin: $origin;
+    -ms-transform-origin: $origin;
+    transform-origin: $origin;
+}
+
+// Rotate
+@mixin rotate ($deg) {
+    @include transform(rotate(#{$deg}deg));
+}
+
+body {
+    .desktop-holder {
+        @include mobile {
+            display: flex;
+            flex-direction: column;
+        }
+        @include desktop {
+            display: flex;
+            flex-direction: row;
+        }
+    }
+    * {
+        box-sizing: border-box;
+    }
+    a {
+        color: inherit;
+    }
+    a:hover {
+        color: inherit;
+    }
+    font-family: 'Montserrat',
+    sans-serif;
+    cursor: pointer;
+    padding: 0;
+    margin: 0;
+    @include desktop {
+        overflow: hidden;
+    }
+    background-color: map-get($colors, background);
+    color: map-get($colors, primary);
+    .flex-row {
+        display: flex;
+        flex-direction: row;
+    }
+    .flex-column {
+        display: flex;
+        flex-direction: column;
+    }
+    .justify-start {
+        justify-content: start;
+    }
+    .justify-center {
+        justify-content: center;
+    }
+    .space-between {
+        justify-content: space-between;
+    }
+    .end-flex {
+        justify-content: end;
+    }
+    .background {
+        @include mobile {
+            width: 100vw;
+            height: 51vh;
+            position: fixed;
+            background-image: url("images/obama-background.jpg");
+            background-size: auto 100%;
+            background-position: 0px 50px;
+        }
+        @include desktop {
+            display: flex;
+            flex-direction: row;
+            justify-content: end;
+            z-index: 0;
+            flex: 0 3 43vw;
+            color: map-get($colors, primary);
+            background-image: url("images/obama-background.jpg");
+            background-position: -100px 0px;
+            background-attachment: scroll;
+            background-repeat: no-repeat;
+            background-size: auto 100%;
+        }
+        .menu-navigation {
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            @include mobile {
+                width: 100vw;
+                height: 10vh;
+                background-color: map-get($colors, background);
+            }
+            @include desktop {
+                justify-content: start;
+                display: flex;
+                flex-direction: column;
+                margin: 3vh 3vw;
+                width: 15vw;
+                right: 0;
+                @include transform-origin(top right);
+            }
+            div {
+                width: 100%;
+                @include desktop {
+                    border-bottom: 2px solid map-get($colors, primary);
+                }
+                @include mobile {
+                    padding: 2vh 5vw;
+                }
+                a {
+                    @include mobile {
+                        line-height: 2.0em;
+                    }
+                    text-decoration: none;
+                    font-weight: 600;
+                    img {
+                        @include desktop {
+                            width: 25px;
+                        }
+                        @include mobile {
+                            width: 25px;
+                        }
+                    }
+                    .mobile-crown {
+                        @include desktop {
+                            display: none;
+                        }
+                    }
+                }
+            }
+            p {
+                @include mobile {
+                    display: none;
+                }
+                width: 100%;
+                font-weight: 600;
+            }
+        }
+    }
+    .left-title {
+        @include mobile {
+            display: none;
+        }
+        height: 100vh;
+        flex: 1 0 14vw;
+        img {
+            width: 50%;
+            margin: 0 auto;
+            margin-top: 10vh;
+        }
+        h2 {
+            position: absolute;
+            bottom: 0;
+            left: 3.5vw;
+            margin: 0 auto;
+            @include transform(rotate(270deg));
+            @include transform-origin(0 0);
+        }
+    }
+    .content-holder {
+        @include mobile {
+            z-index: 3;
+            margin-top: 50vh;
+        }
+        background-color: map-get($map: $colors,
+        $key: secondary);
+        color: map-get($map: $colors,
+        $key: background);
+        flex: 3 0 43vw;
+        padding: 5vh 3vw;
+        p {
+            line-height: 1.5;
+        }
+    }
+}
